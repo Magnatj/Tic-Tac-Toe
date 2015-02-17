@@ -62,6 +62,8 @@ namespace TicTacToeLibrary
                 return 6;
             else if (_board[8] == player && _board[2] == 0 && _board[5] == 0)
                 return 2;
+            else
+                return 1;
         }
 
     }

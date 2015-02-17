@@ -85,6 +85,12 @@
     <Content Include="Resources\dragonBall.png" />
     <Content Include="Resources\dragonX.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TicTacToeLibrary\TicTacToeLibrary.csproj">
+      <Project>{a4adffab-1854-4c6d-a6d1-f6ab25eb2108}</Project>
+      <Name>TicTacToeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
