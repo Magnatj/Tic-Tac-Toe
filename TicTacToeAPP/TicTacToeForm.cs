@@ -13,6 +13,7 @@ namespace TicTacToeAPP
 {
     public partial class TicTacToeForm : Form
     {
+        #region Metodos de la forma
         public TicTacToeForm()
         {
             InitializeComponent();
@@ -22,125 +23,197 @@ namespace TicTacToeAPP
         {
             ddlDificultad.SelectedIndex = 0;
         }
+        #endregion
 
+        #region Variables privadas
         private bool _isOturn = false;
         private int[] _board = new int[9];
+        #endregion
 
+        #region Pictureboxes
         private void pb1_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb1.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb1.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-                
+                else
+                {
+                    pb1.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb2_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb2.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb2.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb2.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb3_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb3.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb3.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb3.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb4_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb4.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb4.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb4.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb5_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb5.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb5.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb5.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb6_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb6.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb6.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb6.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb7_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb7.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb7.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb7.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb8_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb8.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb8.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb8.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
 
         private void pb9_Click(object sender, EventArgs e)
         {
-            if (_isOturn)
+            if (pb9.BackgroundImage == null)
             {
+                if (_isOturn)
+                {
+                    pb9.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                    _isOturn = false;
+                }
 
-            }
-
-            else
-            {
-
+                else
+                {
+                    pb9.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+                    _isOturn = true;
+                }
             }
         }
+        #endregion
+
+        #region Botón
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            BorrarImagenes();
+        }
+        #endregion
+
+        #region Metodos de accion
+        private void BorrarImagenes()
+        {
+            pb1.BackgroundImage = null;
+            pb2.BackgroundImage = null;
+            pb3.BackgroundImage = null;
+            pb4.BackgroundImage = null;
+            pb5.BackgroundImage = null;
+            pb6.BackgroundImage = null;
+            pb7.BackgroundImage = null;
+            pb8.BackgroundImage = null;
+            pb9.BackgroundImage = null;
+        }
+        #endregion
     }
 }

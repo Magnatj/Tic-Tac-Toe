@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicTacToeForm));
             this.panelTicTac = new System.Windows.Forms.Panel();
             this.pb9 = new System.Windows.Forms.PictureBox();
             this.pb8 = new System.Windows.Forms.PictureBox();
@@ -78,6 +79,7 @@
             // 
             // pb9
             // 
+            this.pb9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb9.Location = new System.Drawing.Point(343, 321);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(131, 131);
@@ -87,6 +89,7 @@
             // 
             // pb8
             // 
+            this.pb8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb8.Location = new System.Drawing.Point(171, 321);
             this.pb8.Name = "pb8";
             this.pb8.Size = new System.Drawing.Size(131, 131);
@@ -96,6 +99,7 @@
             // 
             // pb7
             // 
+            this.pb7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb7.Location = new System.Drawing.Point(3, 321);
             this.pb7.Name = "pb7";
             this.pb7.Size = new System.Drawing.Size(131, 131);
@@ -105,6 +109,7 @@
             // 
             // pb6
             // 
+            this.pb6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb6.Location = new System.Drawing.Point(343, 163);
             this.pb6.Name = "pb6";
             this.pb6.Size = new System.Drawing.Size(131, 131);
@@ -114,6 +119,7 @@
             // 
             // pb4
             // 
+            this.pb4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb4.Location = new System.Drawing.Point(3, 163);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(131, 131);
@@ -123,6 +129,7 @@
             // 
             // pb3
             // 
+            this.pb3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb3.Location = new System.Drawing.Point(343, 0);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(131, 131);
@@ -132,6 +139,7 @@
             // 
             // pb2
             // 
+            this.pb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb2.Location = new System.Drawing.Point(171, 0);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(131, 131);
@@ -141,6 +149,7 @@
             // 
             // pb1
             // 
+            this.pb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb1.Location = new System.Drawing.Point(3, 0);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(131, 131);
@@ -150,6 +159,7 @@
             // 
             // pb5
             // 
+            this.pb5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb5.Location = new System.Drawing.Point(171, 163);
             this.pb5.Name = "pb5";
             this.pb5.Size = new System.Drawing.Size(131, 131);
@@ -166,7 +176,7 @@
             // 
             // panelOptions
             // 
-            this.panelOptions.BackColor = System.Drawing.Color.Aquamarine;
+            this.panelOptions.BackColor = System.Drawing.Color.Orange;
             this.panelOptions.Controls.Add(this.btnNewGame);
             this.panelOptions.Controls.Add(this.lblDifficulty);
             this.panelOptions.Controls.Add(this.ddlDificultad);
@@ -200,12 +210,14 @@
             // 
             // btnNewGame
             // 
+            this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnNewGame.Location = new System.Drawing.Point(173, 68);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(129, 23);
             this.btnNewGame.TabIndex = 2;
             this.btnNewGame.Text = "Start New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // TicTacToeForm
             // 
@@ -217,6 +229,7 @@
             this.Controls.Add(this.panelTicTac);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TicTacToeForm";
             this.Text = "Tic Tac Toe";
             this.Load += new System.EventHandler(this.TicTacToeForm_Load);

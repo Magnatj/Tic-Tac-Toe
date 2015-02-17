@@ -79,11 +79,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TicTacToeBoard.png" />
+    <None Include="Resources\TicTacToeBoard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\dragonBall.png" />
-    <Content Include="Resources\dragonX.png" />
+    <Content Include="MaestroKarin.ico" />
+    <Content Include="Resources\dragonBall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\dragonX.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TicTacToeLibrary\TicTacToeLibrary.csproj">
