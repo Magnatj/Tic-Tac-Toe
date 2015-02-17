@@ -146,7 +146,6 @@ namespace TicTacToeAPP
             game = new TicTacToe(ddlDificultad.SelectedIndex+1);
             ActivarPictureBoxes();
             weHaveAWinner = false;
-
         }
         #endregion
 
