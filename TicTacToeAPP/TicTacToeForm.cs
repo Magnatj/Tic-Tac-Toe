@@ -13,6 +13,12 @@ namespace TicTacToeAPP
 {
     public partial class TicTacToeForm : Form
     {
+        #region Variables privadas
+        private int[] _board = new int[9];
+        private TicTacToe game = new TicTacToe(0);
+        private List<PictureBox> availableBoxes;
+        #endregion
+
         #region Metodos de la forma
         public TicTacToeForm()
         {
@@ -22,12 +28,18 @@ namespace TicTacToeAPP
         private void TicTacToeForm_Load(object sender, EventArgs e)
         {
             ddlDificultad.SelectedIndex = 0;
-        }
-        #endregion
 
-        #region Variables privadas
-        private bool _isOturn = false;
-        private int[] _board = new int[9];
+            availableBoxes = new List<PictureBox>();
+            availableBoxes.Add(pb1);
+            availableBoxes.Add(pb2);
+            availableBoxes.Add(pb3);
+            availableBoxes.Add(pb4);
+            availableBoxes.Add(pb5);
+            availableBoxes.Add(pb6);
+            availableBoxes.Add(pb7);
+            availableBoxes.Add(pb8);
+            availableBoxes.Add(pb9);
+        }
         #endregion
 
         #region Pictureboxes
@@ -35,17 +47,11 @@ namespace TicTacToeAPP
         {
             if (pb1.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb1.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
+                pb1.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(0);
 
-                else
-                {
-                    pb1.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+
+
             }
         }
 
@@ -53,17 +59,9 @@ namespace TicTacToeAPP
         {
             if (pb2.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb2.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb2.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb2.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(1);
+                ComputerMove();
             }
         }
 
@@ -71,17 +69,9 @@ namespace TicTacToeAPP
         {
             if (pb3.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb3.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb3.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb3.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(2);
+                ComputerMove();
             }
         }
 
@@ -89,17 +79,9 @@ namespace TicTacToeAPP
         {
             if (pb4.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb4.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb4.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb4.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(3);
+                ComputerMove();
             }
         }
 
@@ -107,17 +89,9 @@ namespace TicTacToeAPP
         {
             if (pb5.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb5.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb5.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb5.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(4);
+                ComputerMove();
             }
         }
 
@@ -125,17 +99,9 @@ namespace TicTacToeAPP
         {
             if (pb6.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb6.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb6.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb6.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(5);
+                ComputerMove();
             }
         }
 
@@ -143,17 +109,9 @@ namespace TicTacToeAPP
         {
             if (pb7.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb7.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb7.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb7.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(6);
+                ComputerMove();
             }
         }
 
@@ -161,17 +119,9 @@ namespace TicTacToeAPP
         {
             if (pb8.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb8.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb8.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb8.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(7);
+                ComputerMove();
             }
         }
 
@@ -179,17 +129,9 @@ namespace TicTacToeAPP
         {
             if (pb9.BackgroundImage == null)
             {
-                if (_isOturn)
-                {
-                    pb9.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
-                    _isOturn = false;
-                }
-
-                else
-                {
-                    pb9.BackgroundImage = Image.FromFile("./Resources/dragonX.png");
-                    _isOturn = true;
-                }
+                pb9.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
+                game.PlayerMove(8);
+                ComputerMove();
             }
         }
         #endregion
@@ -198,6 +140,10 @@ namespace TicTacToeAPP
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             BorrarImagenes();
+
+            game = new TicTacToe(ddlDificultad.SelectedIndex);
+            ActivarPictureBoxes();
+
         }
         #endregion
 
@@ -213,6 +159,31 @@ namespace TicTacToeAPP
             pb7.BackgroundImage = null;
             pb8.BackgroundImage = null;
             pb9.BackgroundImage = null;
+        }
+
+        private void ActivarPictureBoxes()
+        {
+            pb1.Enabled = true;
+            pb2.Enabled = true;
+            pb3.Enabled = true;
+            pb4.Enabled = true;
+            pb5.Enabled = true;
+            pb6.Enabled = true;
+            pb7.Enabled = true;
+            pb8.Enabled = true;
+            pb9.Enabled = true;
+        }
+
+        private void ComputerMove()
+        {
+            int index = game.CPUMove();
+
+            while (availableBoxes[index].BackgroundImage != null)
+            {
+                index = game.CPUMove();
+            }
+
+            availableBoxes[index].BackgroundImage = Image.FromFile("./Resources/dragonX.png");
         }
         #endregion
     }

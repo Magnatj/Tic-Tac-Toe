@@ -80,6 +80,7 @@
             // pb9
             // 
             this.pb9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb9.Enabled = false;
             this.pb9.Location = new System.Drawing.Point(343, 321);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(131, 131);
@@ -90,6 +91,7 @@
             // pb8
             // 
             this.pb8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb8.Enabled = false;
             this.pb8.Location = new System.Drawing.Point(171, 321);
             this.pb8.Name = "pb8";
             this.pb8.Size = new System.Drawing.Size(131, 131);
@@ -100,6 +102,7 @@
             // pb7
             // 
             this.pb7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb7.Enabled = false;
             this.pb7.Location = new System.Drawing.Point(3, 321);
             this.pb7.Name = "pb7";
             this.pb7.Size = new System.Drawing.Size(131, 131);
@@ -110,6 +113,7 @@
             // pb6
             // 
             this.pb6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb6.Enabled = false;
             this.pb6.Location = new System.Drawing.Point(343, 163);
             this.pb6.Name = "pb6";
             this.pb6.Size = new System.Drawing.Size(131, 131);
@@ -120,6 +124,7 @@
             // pb4
             // 
             this.pb4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb4.Enabled = false;
             this.pb4.Location = new System.Drawing.Point(3, 163);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(131, 131);
@@ -130,6 +135,7 @@
             // pb3
             // 
             this.pb3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb3.Enabled = false;
             this.pb3.Location = new System.Drawing.Point(343, 0);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(131, 131);
@@ -140,6 +146,7 @@
             // pb2
             // 
             this.pb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb2.Enabled = false;
             this.pb2.Location = new System.Drawing.Point(171, 0);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(131, 131);
@@ -150,6 +157,7 @@
             // pb1
             // 
             this.pb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb1.Enabled = false;
             this.pb1.Location = new System.Drawing.Point(3, 0);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(131, 131);
@@ -160,6 +168,7 @@
             // pb5
             // 
             this.pb5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb5.Enabled = false;
             this.pb5.Location = new System.Drawing.Point(171, 163);
             this.pb5.Name = "pb5";
             this.pb5.Size = new System.Drawing.Size(131, 131);
