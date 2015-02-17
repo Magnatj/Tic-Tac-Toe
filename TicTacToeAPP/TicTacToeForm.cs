@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace TicTacToeAPP
         private TicTacToe game = new TicTacToe(0);
         private List<PictureBox> availableBoxes;
         private bool weHaveAWinner = false;
+        private SoundPlayer player = new SoundPlayer();
         #endregion
 
         #region Metodos de la forma
@@ -50,28 +52,10 @@ namespace TicTacToeAPP
             {
                 pb1.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(0);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
-
+                GetResults();
             }
         }
+
 
         private void pb2_Click(object sender, EventArgs e)
         {
@@ -79,25 +63,7 @@ namespace TicTacToeAPP
             {
                 pb2.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(1);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -107,25 +73,7 @@ namespace TicTacToeAPP
             {
                 pb3.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(2);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -135,25 +83,7 @@ namespace TicTacToeAPP
             {
                 pb4.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(3);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -163,25 +93,7 @@ namespace TicTacToeAPP
             {
                 pb5.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(4);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -191,25 +103,7 @@ namespace TicTacToeAPP
             {
                 pb6.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(5);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -219,25 +113,7 @@ namespace TicTacToeAPP
             {
                 pb7.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(6);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -247,25 +123,7 @@ namespace TicTacToeAPP
             {
                 pb8.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(7);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
 
@@ -275,25 +133,7 @@ namespace TicTacToeAPP
             {
                 pb9.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(8);
-                if (game.Result == 1)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
-                    return;
-                }
-                if (game.Result == 3)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("DRAW!");
-                    return;
-                }
-
-                ComputerMove();
-                if (game.Result == 2)
-                {
-                    weHaveAWinner = true;
-                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
-                }
+                GetResults();
             }
         }
         #endregion
@@ -341,35 +181,37 @@ namespace TicTacToeAPP
         {
             int index = game.CPUMove();
 
-            if (index == -1)
-            {
-                index = 4;
-            }
-
             while (availableBoxes[index].BackgroundImage != null)
             {
                 index = game.CPUMove();
-                if (index == -1)
-                {
-                    index = 1;
-                }
-
-                if (availableBoxes[index].BackgroundImage != null)
-                {
-                    index = 3;
-                }
-
-                if (availableBoxes[index].BackgroundImage != null)
-                {
-                    index = 5;
-                }
-                if (availableBoxes[index].BackgroundImage != null)
-                {
-                    index = 7;
-                }
             }
 
             availableBoxes[index].BackgroundImage = Image.FromFile("./Resources/dragonX.png");
+        }
+
+        private void GetResults()
+        {
+            if (game.Result == 1)
+            {
+                weHaveAWinner = true;
+                MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                return;
+            }
+            if (game.Result == 3)
+            {
+                weHaveAWinner = true;
+                MessageBox.Show("DRAW!");
+                return;
+            }
+
+            ComputerMove();
+            if (game.Result == 2)
+            {
+                weHaveAWinner = true;
+                player = new SoundPlayer("./Resources/Maldicion.wav");
+                player.Play();
+                MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+            }
         }
         #endregion
     }
