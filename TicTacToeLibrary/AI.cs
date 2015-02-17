@@ -52,6 +52,8 @@ namespace TicTacToeLibrary
             int selected = HLineStrategy();
             if (selected == -1)
                 return VLineStrategy();
+            if (selected == -1)
+                selected = _board.First(q => q == 0);
             if (selected != -1)
                 _board[selected] = 2;
             return selected;
@@ -66,9 +68,11 @@ namespace TicTacToeLibrary
                 selected = HLineStrategy();
             if (selected == -1)
                 selected = VLineStrategy();
-
+            if (selected == -1)
+                selected = _board.First(q => q == 0);
             if (selected != -1)
                 _board[selected] = 2;
+            
 
             return selected;        
         }

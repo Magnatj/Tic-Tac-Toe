@@ -27,6 +27,8 @@ namespace TicTacToeLibrary
                 _board[boardIndex] = 1;
             if (_scanner.GameOver(1))
                 _result = 1;
+            else if (_board.Count(q => q == 0) == 0)
+                _result = 3;
         }
 
         public int CPUMove()

@@ -17,6 +17,7 @@ namespace TicTacToeAPP
         private int[] _board = new int[9];
         private TicTacToe game = new TicTacToe(0);
         private List<PictureBox> availableBoxes;
+        private bool weHaveAWinner = false;
         #endregion
 
         #region Metodos de la forma
@@ -45,93 +46,254 @@ namespace TicTacToeAPP
         #region Pictureboxes
         private void pb1_Click(object sender, EventArgs e)
         {
-            if (pb1.BackgroundImage == null)
+            if (pb1.BackgroundImage == null && !weHaveAWinner)
             {
                 pb1.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(0);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
 
-
+                ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
 
             }
         }
 
         private void pb2_Click(object sender, EventArgs e)
         {
-            if (pb2.BackgroundImage == null)
+            if (pb2.BackgroundImage == null && !weHaveAWinner)
             {
                 pb2.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(1);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb3_Click(object sender, EventArgs e)
         {
-            if (pb3.BackgroundImage == null)
+            if (pb3.BackgroundImage == null && !weHaveAWinner)
             {
                 pb3.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(2);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb4_Click(object sender, EventArgs e)
         {
-            if (pb4.BackgroundImage == null)
+            if (pb4.BackgroundImage == null && !weHaveAWinner)
             {
                 pb4.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(3);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb5_Click(object sender, EventArgs e)
         {
-            if (pb5.BackgroundImage == null)
+            if (pb5.BackgroundImage == null && !weHaveAWinner)
             {
                 pb5.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(4);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb6_Click(object sender, EventArgs e)
         {
-            if (pb6.BackgroundImage == null)
+            if (pb6.BackgroundImage == null && !weHaveAWinner)
             {
                 pb6.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(5);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb7_Click(object sender, EventArgs e)
         {
-            if (pb7.BackgroundImage == null)
+            if (pb7.BackgroundImage == null && !weHaveAWinner)
             {
                 pb7.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(6);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb8_Click(object sender, EventArgs e)
         {
-            if (pb8.BackgroundImage == null)
+            if (pb8.BackgroundImage == null && !weHaveAWinner)
             {
                 pb8.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(7);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
 
         private void pb9_Click(object sender, EventArgs e)
         {
-            if (pb9.BackgroundImage == null)
+            if (pb9.BackgroundImage == null && !weHaveAWinner)
             {
                 pb9.BackgroundImage = Image.FromFile("./Resources/dragonBall.png");
                 game.PlayerMove(8);
+                if (game.Result == 1)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU WIN!");
+                    return;
+                }
+                if (game.Result == 3)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("DRAW!");
+                    return;
+                }
+
                 ComputerMove();
+                if (game.Result == 2)
+                {
+                    weHaveAWinner = true;
+                    MessageBox.Show("CONGRATULATIONS, YOU SUCK!");
+                }
             }
         }
         #endregion
@@ -141,8 +303,9 @@ namespace TicTacToeAPP
         {
             BorrarImagenes();
 
-            game = new TicTacToe(ddlDificultad.SelectedIndex);
+            game = new TicTacToe(ddlDificultad.SelectedIndex+1);
             ActivarPictureBoxes();
+            weHaveAWinner = false;
 
         }
         #endregion
@@ -178,9 +341,32 @@ namespace TicTacToeAPP
         {
             int index = game.CPUMove();
 
+            if (index == -1)
+            {
+                index = 4;
+            }
+
             while (availableBoxes[index].BackgroundImage != null)
             {
                 index = game.CPUMove();
+                if (index == -1)
+                {
+                    index = 1;
+                }
+
+                if (availableBoxes[index].BackgroundImage != null)
+                {
+                    index = 3;
+                }
+
+                if (availableBoxes[index].BackgroundImage != null)
+                {
+                    index = 5;
+                }
+                if (availableBoxes[index].BackgroundImage != null)
+                {
+                    index = 7;
+                }
             }
 
             availableBoxes[index].BackgroundImage = Image.FromFile("./Resources/dragonX.png");
