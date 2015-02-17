@@ -8,63 +8,193 @@ namespace TicTacToeLibrary
 {
     class AI
     {
-        private BoardScanner _scanner;
         private int[] _board;
         private int _difficulty;
         private Random _random = new Random();
 
-        public AI(BoardScanner scanner, int difficulty, int[] board)
+        public AI(int difficulty, int[] board)
         {
-            _scanner = scanner;
-            _board = board;
             _difficulty = difficulty;
+            _board = board;
         }
 
-        public void MakeMove()
+        public int MakeMove()
         {
-            int toWin = OneMoveToWin(2);
-            int rivalToWin = OneMoveToWin(1);
+            if (_difficulty == 1)
+                return Difficulty1();
+            else if (_difficulty == 2)
+                return Difficulty2();
+            else if (_difficulty == 3)
+                return Difficulty3();
+            return Difficulty4();
         }
 
-        private int OneMoveToWin(int player)
+        #region Difficulty
+        private int Difficulty1()
         {
-            int index = -1;
-            for (int i = 0; i < 9; i++)
+            int selected = _random.Next(0, 9);
+            if (_board[selected] == 0)
+                _board[selected] = 2;
+            return selected;
+        }
+        
+        private int Difficulty2()
+        {
+            int selected;
+            while ((selected = _random.Next(0, 9)) != 0)
+                continue;
+            _board[selected] = 2;
+            return selected;
+        }
+
+        private int Difficulty3()
+        {
+            int selected = HLineStrategy();
+            if (selected == -1)
+                return VLineStrategy();
+            if (selected != -1)
+                _board[selected] = 2;
+            return selected;
+        }
+
+        private int Difficulty4()
+        {
+            int selected = CornerStrategy();
+            if (selected == -1)
+                selected = DiagonalStrategy();
+            if (selected == -1)
+                selected = HLineStrategy();
+            if (selected == -1)
+                selected = VLineStrategy();
+
+            if (selected != -1)
+                _board[selected] = 2;
+
+            return selected;        
+        }
+        
+        #endregion
+
+        #region Availability
+        private int CornerStrategy()
+        {
+            if (LookForCorner(0) == 0)
+                return 0;
+            if (LookForCorner(2) == 2)
+                return 2;
+            if (LookForCorner(6) == 6)
+                return 6;
+            return LookForCorner(8);
+        }
+
+        private int DiagonalStrategy()
+        {
+            int available = -1;
+            for (int i = 0; i <= 8; i += 4)
             {
-                if (_board[i] == 0)
+                if (_board[i] == 1)
                 {
-                    _board[i] = player;
-                    if (_scanner.GameOver(player))
-                        index = i;
-                    _board[i] = 0;
-                    if (index > -1)
-                        break;
+                    available = -1;
+                    break;
+                }
+                else if (_board[i] == 0)
+                    available = i;
+            }
+            if (available == -1)
+            {
+                for (int i = 2; i <= 8; i += 2)
+                {
+                    if (_board[i] == 1)
+                        return -1;
+                    if (_board[i] == 0)
+                        available = i;
                 }
             }
-            return index;
+            return available;
         }
 
-        private int TwoMovesAway(int player)
+        private int HLineStrategy()
         {
-            if (_board[0] == player && _board[1] == 0 && _board[2] == 0)
-                return 2;
-            else if (_board[0] == player && _board[3] == 0 && _board[6] == 0)
-                return 6;
-            else if (_board[2] == player && _board[0] == 0 && _board[1] == 0)
-                return 0;
-            else if (_board[2] == player && _board[5] == 0 && _board[8] == 0)
-                return 8;
-            else if (_board[6] == player && _board[0] == 0 && _board[3] == 0)
-                return 0;
-            else if (_board[6] == player && _board[7] == 0 && _board[8] == 0)
-                return 8;
-            else if (_board[8] == player && _board[6] == 0 && _board[7] == 0)
-                return 6;
-            else if (_board[8] == player && _board[2] == 0 && _board[5] == 0)
-                return 2;
-            else
-                return 1;
+            int available = LookForHLine(0);
+            available = available == -1 ? LookForHLine(3) : available;
+            available = available == -1 ? LookForHLine(6) : available;
+            return available;
         }
+
+        private int VLineStrategy()
+        {
+            int available = LookForVLine(0);
+            available = available == -1 ? LookForVLine(1) : available;
+            available = available == -1 ? LookForVLine(2) : available;
+            return available;
+        }
+
+        private int LookForVLine(int fromIndex)
+        {
+            int available = -1;
+            for (int i = fromIndex; i < 9; i+=3)
+            {
+                if (_board[i] == 1)
+                    return -1;
+                if (_board[i] == 0)
+                    available = i;
+            }
+            return available;
+        }
+
+        private int LookForHLine(int fromIndex)
+        {
+            int available = -1;
+            for (int i = fromIndex; i <= fromIndex + 2; i++)
+            {
+                if (_board[i] == 1)
+                    return -1;
+                if (_board[i] == 0)
+                    available = i;
+            }
+            return available;
+        }
+        
+        private int LookForCorner(int corner)
+        {
+            switch (corner)
+            {
+                case 0:
+                    if (_board[0] == 0)
+                    {
+                        if (_board[2] == 1 || _board[6] == 1)
+                            return -1;
+                        return 0;
+                    }
+                    break;
+                case 2:
+                    if (_board[2] == 0)
+                    {
+                        if (_board[0] == 1 || _board[8] == 1)
+                            return -1;
+                        return 2;
+                    }
+                    break;
+                case 6:
+                    if (_board[6] == 0)
+                    {
+                        if (_board[0] == 1 || _board[8] == 1)
+                            return -1;
+                        return 6;
+                    }
+                    break;
+                case 8:
+                    if (_board[8] == 0)
+                    {
+                        if (_board[2] == 1 || _board[6] == 1)
+                            return -1;
+                        return 8;
+                    }
+                    break;
+            }
+            return -1;
+        }
+        #endregion
 
     }
 }

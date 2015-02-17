@@ -8,28 +8,33 @@ namespace TicTacToeLibrary
 {
     public class TicTacToe
     {
-        private int _turn = 1;
+        private int _turn = 1, _result = 0;
         private int[] _board = new int[9];
         private BoardScanner _scanner;
         private AI _cpu;
 
+        public int Result { get { return _result; } }
+
         public TicTacToe(int difficulty)
         {
             _scanner = new BoardScanner(_board);
-            _cpu = new AI(_scanner, difficulty, _board);
+            _cpu = new AI(difficulty, _board);
         }
 
-        public bool? PlayerMove(int boardIndex)
+        public void PlayerMove(int boardIndex)
         {
-            if (_turn != 1 || _board[boardIndex] != 0)
-                return null;
-            _board[boardIndex] = 1;
-            return _scanner.GameOver(1);
+            if (_turn == 1 && _board[boardIndex] == 0)
+                _board[boardIndex] = 1;
+            if (_scanner.GameOver(1))
+                _result = 1;
         }
 
-        public bool? CPUMove()
+        public int CPUMove()
         {
-            return true;
+            int affected = _cpu.MakeMove();
+            if (_scanner.GameOver(2))
+                _result = 2;
+            return affected;
         }
 
     }
