@@ -94,8 +94,12 @@
     <Content Include="Resources\Maldicion.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\MismosResultados.wav" />
-    <Content Include="Resources\SoyMasFuerte.wav" />
+    <Content Include="Resources\MismosResultados.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SoyMasFuerte.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TicTacToeLibrary\TicTacToeLibrary.csproj">
