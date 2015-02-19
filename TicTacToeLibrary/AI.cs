@@ -37,7 +37,7 @@ namespace TicTacToeLibrary
                 _board[selected] = 2;
             return selected;
         }
-        
+
         private int Difficulty2()
         {
             int selected;
@@ -72,11 +72,11 @@ namespace TicTacToeLibrary
                 selected = _board.First(q => q == 0);
             if (selected != -1)
                 _board[selected] = 2;
-            
 
-            return selected;        
+
+            return selected;
         }
-        
+
         #endregion
 
         #region Availability
@@ -136,12 +136,15 @@ namespace TicTacToeLibrary
         private int LookForVLine(int fromIndex)
         {
             int available = -1;
-            for (int i = fromIndex; i < 9; i+=3)
+            for (int i = fromIndex; i < 9; i += 3)
             {
                 if (_board[i] == 1)
                     return -1;
                 if (_board[i] == 0)
+                {
                     available = i;
+                    return available;
+                }
             }
             return available;
         }
@@ -154,11 +157,14 @@ namespace TicTacToeLibrary
                 if (_board[i] == 1)
                     return -1;
                 if (_board[i] == 0)
+                {
                     available = i;
+                    return available;
+                }
             }
             return available;
         }
-        
+
         private int LookForCorner(int corner)
         {
             switch (corner)

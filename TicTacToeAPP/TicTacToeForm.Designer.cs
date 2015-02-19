@@ -41,9 +41,9 @@
             this.pb5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelOptions = new System.Windows.Forms.Panel();
-            this.ddlDificultad = new System.Windows.Forms.ComboBox();
-            this.lblDifficulty = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
+            this.lblDifficulty = new System.Windows.Forms.Label();
+            this.ddlDificultad = new System.Windows.Forms.ComboBox();
             this.panelTicTac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb8)).BeginInit();
@@ -194,29 +194,6 @@
             this.panelOptions.Size = new System.Drawing.Size(482, 120);
             this.panelOptions.TabIndex = 1;
             // 
-            // ddlDificultad
-            // 
-            this.ddlDificultad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlDificultad.FormattingEnabled = true;
-            this.ddlDificultad.Items.AddRange(new object[] {
-            "Reflejo Simple",
-            "Bien Informado",
-            "Basado en Metas",
-            "Basado en Utilidad"});
-            this.ddlDificultad.Location = new System.Drawing.Point(250, 21);
-            this.ddlDificultad.Name = "ddlDificultad";
-            this.ddlDificultad.Size = new System.Drawing.Size(172, 24);
-            this.ddlDificultad.TabIndex = 0;
-            // 
-            // lblDifficulty
-            // 
-            this.lblDifficulty.AutoSize = true;
-            this.lblDifficulty.Location = new System.Drawing.Point(105, 24);
-            this.lblDifficulty.Name = "lblDifficulty";
-            this.lblDifficulty.Size = new System.Drawing.Size(139, 17);
-            this.lblDifficulty.TabIndex = 1;
-            this.lblDifficulty.Text = "Choose the difficulty:";
-            // 
             // btnNewGame
             // 
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -227,6 +204,29 @@
             this.btnNewGame.Text = "Start New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
+            // 
+            // lblDifficulty
+            // 
+            this.lblDifficulty.AutoSize = true;
+            this.lblDifficulty.Location = new System.Drawing.Point(105, 24);
+            this.lblDifficulty.Name = "lblDifficulty";
+            this.lblDifficulty.Size = new System.Drawing.Size(139, 17);
+            this.lblDifficulty.TabIndex = 1;
+            this.lblDifficulty.Text = "Choose the difficulty:";
+            // 
+            // ddlDificultad
+            // 
+            this.ddlDificultad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlDificultad.FormattingEnabled = true;
+            this.ddlDificultad.Items.AddRange(new object[] {
+            "Yamcha",
+            "Freezer",
+            "Cell",
+            "Mr. Satán"});
+            this.ddlDificultad.Location = new System.Drawing.Point(250, 21);
+            this.ddlDificultad.Name = "ddlDificultad";
+            this.ddlDificultad.Size = new System.Drawing.Size(172, 24);
+            this.ddlDificultad.TabIndex = 0;
             // 
             // TicTacToeForm
             // 
