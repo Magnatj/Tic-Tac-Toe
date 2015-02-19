@@ -193,12 +193,16 @@ namespace TicTacToeAPP
             if (game.Result == 1)
             {
                 weHaveAWinner = true;
+                player = new SoundPlayer("./Resources/SoyMasFuerte.wav");
+                player.Play();
                 MessageBox.Show("CONGRATULATIONS, YOU WIN!");
                 return;
             }
             if (game.Result == 3)
             {
                 weHaveAWinner = true;
+                player = new SoundPlayer("./Resources/MismosResultados.wav");
+                player.Play();
                 MessageBox.Show("DRAW!");
                 return;
             }
